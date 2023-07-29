@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+    int T;
+    printf("Enter Test Case: \n");
+    scanf("%d", &T);                // Input test case.
+
+    while(T--)
+    {
+        char ch;
+        fflush(stdin);  //  fflush(stdin) function is used to clear the input buffer memory of any data that may still be stored.
+        scanf("%c", &ch);               // Input character from user.
+
+        if(ch >= '0' && ch <= '9')       // Number check.
+        {
+            printf("%c is digit.\n", ch);
+        }
+
+        else if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+        {
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+                    ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+            {
+                printf("%c is an Alphabet. It is an Vowel.\n", ch);
+            }
+            else
+            {
+                printf("%c is an Alphabet. It is an Consonant.\n", ch);
+            }
+        }
+        else
+        {
+            printf("%c is special character.\n", ch);
+        }
+    }
+    return 0;
+}
