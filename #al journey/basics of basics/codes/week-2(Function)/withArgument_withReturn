@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+void withArg_withRtn(int a, int b)
+// There are arguments a and b in the parentheses ().
+{
+    return a+b;
+}
+
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("Sum of Entered two numbers: %d", a+b);
+    return 0;
+// Return to function.
+}
