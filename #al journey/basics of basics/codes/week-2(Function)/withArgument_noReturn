@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+void withArg_noRtn(int a, int b)
+// There are arguments a and b in the parentheses ().
+{
+    printf("Sum = %d", a+b);
+}
+
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+// Call function.
+    withArg_noRtn(a, b);
+// No return values.
+}
