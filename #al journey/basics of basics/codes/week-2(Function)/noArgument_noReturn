@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+void noArg_noRtn()
+// There is no arguments in the parentheses ().
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("Sum of Entered two numbers: %d", a+b);
+// No return values.
+}
+
+int main()
+{
+// Call function.
+    noArg_noRtn();
+}
