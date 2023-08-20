@@ -1,0 +1,43 @@
+// Binary Search
+#include<stdio.h>
+int main()
+{
+    int n;                      // Array size
+    printf("Array size?\n");
+    scanf("%d",&n);
+    int a[n], i, j;
+    printf("INPUT sorted elements->\n");        // Input elements(SORTED)
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    int data, flag=0;
+    printf("Which data to search:\n");      // Data to search?
+    scanf("%d", &data);
+    int low=0, high=n-1, mid;
+    for(j=0; low<=high; j++)
+    {
+        mid = (low + high)/2;
+        if( a[mid]==data )
+        {
+            flag = 1;            // flag 1 means data found
+            break;
+        }
+        else if(data<a[mid])
+        {
+            high = mid-1;      // Change high if data less than mid value
+        }
+        else if(data>a[mid])
+        {
+            low = mid+1;       // Change low if data greater than mid value
+        }
+    }
+    if( flag==1 )
+    {
+        printf("Data %d found at index %d.\n\n", data, mid);
+    }
+    else
+    {
+        printf("Data not found!\n\n");
+    }
+}
