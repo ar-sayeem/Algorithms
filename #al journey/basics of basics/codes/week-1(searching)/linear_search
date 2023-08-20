@@ -1,0 +1,36 @@
+// Linear Search
+#include<stdio.h>
+int main()
+{
+    printf("Array size?\n");
+    int n;              // Array size
+    scanf("%d",&n);
+
+    int a[n], i;
+    printf("Enter Elements:\n");        // Input Elements
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int data;
+    printf("Which data to search:\n");      // Data to search?
+    scanf("%d", &data);
+    int flag=0, j;
+    for( j=0; j<n; j++)
+    {
+        if(data == a[j])
+        {
+            flag = 1;       // flag 1 means data found
+            break;
+        }
+    }
+    if(flag == 1)
+    {
+        printf("Data %d found at index %d./n/n", data, j);
+    }
+    else
+    {
+        printf("Data not found!\n\n");
+    }
+    return 0;
+}
