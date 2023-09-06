@@ -1,0 +1,60 @@
+/// Bubble Sorting in C
+
+#include<stdio.h>
+
+void bubbleSort(int a[], int n)
+{
+    int i, j, temp, flag;
+    for(i=0; i<n-1; i++)
+    {
+        flag=0;
+        for(j=0; j<n-i-1; j++)
+        {
+/// For decreasing order use '<' instead of '>'.
+            if(a[j] > a[j+1])
+            {
+                // SWAP
+                temp    = a[j];
+                a[j]    = a[j+1];
+                a[j+1]  = temp;
+/// Set the flag to indicate a swap occurred.
+                flag    = 1;
+            }
+        }
+/// If no two elements were swapped in inner loop, the array is already sorted.
+        if(flag==0)
+            break;
+    }
+}
+
+///------------------------------------------------------------------------------------------
+
+void display(int a[], int n)
+{
+    int i;
+    printf("After Bubble Sorting:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+}
+
+///------------------------------------------------------------------------------------------
+
+int main()
+{
+    int n;
+    printf("How many Elements?\n");
+    scanf("%d", &n);
+    printf("Enter %d integers:\n", n);
+    int a[n], i;
+    for (i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    bubbleSort(a, n);
+    display(a, n);
+
+    return 0;
+}
