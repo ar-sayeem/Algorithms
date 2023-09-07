@@ -1,0 +1,51 @@
+/// Insertion Sort in C
+
+#include<stdio.h>
+
+void insertionSort(int a[], int n)
+{
+    int i, j, temp;
+    for(i=0; i<n; i++)
+    {
+        temp = a[i];
+        j = i-1;
+        while(j>=0 && a[j]>temp)
+        {
+            a[j+i] = a[j];
+            j--;
+        }
+        a[j+1] = temp;
+    }
+}
+
+///------------------------------------------------------------------------------------------
+
+void display(int a[], int n)
+{
+    int i;
+    printf("After Insertion Sorting:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+}
+
+///------------------------------------------------------------------------------------------
+
+int main()
+{
+    int n;
+    printf("How many Elements?\n");
+    scanf("%d", &n);
+    printf("Enter %d integers:\n", n);
+    int a[n], i;
+    for (i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    insertionSort(a, n);
+    display(a, n);
+
+    return 0;
+}
