@@ -3,11 +3,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void merge(int arr[], int l, int m, int r)
+void merge(int arr[], int l, int m, int h)
 {
     int i, j, k;
     int n1 = m - l + 1;
-    int n2 = r - m;
+    int n2 = h - m;
 
     int L[n1], R[n2];
 
@@ -49,17 +49,18 @@ void merge(int arr[], int l, int m, int r)
     }
 }
 
-void mergeSort(int arr[], int l, int r)
+void mergeSort(int arr[], int l, int h)
 {
-    if (l < r)
+    if (l < h)
     {
-        int m = l + (r - l) / 2;
+        //int m = l + (h - l) / 2; l->L
+        int m = (l+h)/2;
 
 
         mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
+        mergeSort(arr, m + 1, h);
 
-        merge(arr, l, m, r);
+        merge(arr, l, m, h);
     }
 }
 
@@ -89,8 +90,11 @@ int main()
     return 0;
 }
 
-/// With User Input
+//---------------------------------------------------------------------------------------------
+
 /*
+/// With User Input
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -177,4 +181,91 @@ int main()
 }
 */
 
+//---------------------------------------------------------------------------------------------
 
+/*
+#include <stdio.h>
+
+void marge(int a[], int l, int mid, int h);
+void margsort(int a[], int l, int h);
+void dis(int n, int a[], int b[]);
+
+int main()
+{
+    int n, i;
+    printf("Enter the size of array:");
+    scanf("%d", &n);
+    int a[n], b[n];
+
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int l = 0, h = n - 1;
+    margsort(a, l, h);
+    dis(n, a, b);
+
+    return 0;
+}
+
+void marge(int a[], int l, int mid, int h)
+{
+    int i = l, j = mid + 1, k = l, b[h+1];
+
+    while (i <= mid && j <= h)
+    {
+        if (a[i] <= a[j])
+        {
+            b[k] = a[i];
+            i++;
+        }
+        else
+        {
+            b[k] = a[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i <= mid)
+    {
+        b[k] = a[i];
+        i++;
+        k++;
+    }
+
+    while (j <= h)
+    {
+        b[k] = a[j];
+        j++;
+        k++;
+    }
+
+    for (i = l; i <= h; i++)
+    {
+        a[i] = b[i];
+    }
+}
+
+void margsort(int a[], int l, int h)
+{
+    if (l < h)
+    {
+        int mid = (l + h) / 2;
+        margsort(a, l, mid);
+        margsort(a, mid + 1, h);
+        marge(a, l, mid, h);
+    }
+}
+
+void dis(int n, int a[], int b[])
+{
+    printf("\nSorted array:");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+}
+*/
