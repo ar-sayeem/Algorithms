@@ -4,7 +4,7 @@ Formula of "0/1 Knapsack"
 
 Formula:
 
- A[i, w] = max( A[i-1,w] , A[i-1] , w-w[i] + P[i] )
+ A[i, w] = max( A[i-1,w] , A[ [i-1] , w-w[i] ] + P[i] )
 
  where,
         i = item
