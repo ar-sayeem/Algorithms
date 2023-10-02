@@ -1,0 +1,28 @@
+/// Greedy Algorithm
+/// Minimum Number of Coins (Demo Codes)
+
+for(i=0; i<=c.length; i++)
+{
+    for(j=0; j<=amount; j++)
+    {
+        if(c[i]>j)
+        {
+            Solution[i][j] = Solution[i-1][j];
+        }
+        else
+        {
+            Solution[i][j] = min( Solution[i-1][j] , 1 + Solution[i][j-c[i] );
+        }
+    }
+}
+
+/// Description
+/*
+    Coins: {1, 5, 7, 9} , Amount = $12
+    Ques : Minimum number of coin to fit $12?
+    Ans  : Two ( 5 & 7 )
+           5+7 = 12.
+           There can be other ways such $9(1x) + $1(3x).
+           That will be happen using total 4 coins. But we
+           need minimum number of coin. And so 5 & 7 is appropriate.
+*/
