@@ -26,3 +26,4 @@ for(i=0; i<=c.length; i++)
            That will be happen using total 4 coins. But we
            need minimum number of coin. And so 5 & 7 is appropriate.
 */
+
