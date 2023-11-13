@@ -1,0 +1,10 @@
+/// Dynamic Programing
+/// Longest Common Subsequence - LCS
+
+if (x[i]) == y[j]
+{
+    c[i][j] = c[i-1] [j-1] + 1;
+}
+else{
+    c[i][j] = max(c[i][j-1], c[i-1][j]);
+}
